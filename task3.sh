@@ -16,7 +16,7 @@ function encryption(){
     echo "Enter the filename that will be used to save as output:"
     read outFile
 
-openssl enc -$encAlg -pass pass:$passEnc -p -in $toencFile -out $outFile
+openssl enc -$encAlg -k $passEnc -p -in $toencFile -out $outFile
 
 choices
 }
@@ -31,7 +31,7 @@ function decryption(){
     echo "Enter the filename that will be used to save as output:"
     read outDec
 
-openssl enc -$decAlg -pass pass:$passDec -d -in $todecFile -out $outDec -P
+openssl enc -$decAlg -k $passDec -d -in $todecFile -out $outDec -P
 
 choices
 }
@@ -53,13 +53,13 @@ function choices(){
 
 echo "Enter task name which you want to perform: "
 read task
-if [[ $task == "Encryption" || $task == "encryption" ]]
+if [[ $task == "Encryption" || $task == "encryption" || $task == "1" ]]
     then
         encryption
-elif [[ $task == "Decryption" || $task == "decryption" ]]
+elif [[ $task == "Decryption" || $task == "decryption" || $task == "2" ]]
     then 
         decryption
-elif [[ $task == "Exit" || $task == "exit" ]]
+elif [[ $task == "Exit" || $task == "exit" || $task == "3" ]]
     then
         exitTask
 else 
