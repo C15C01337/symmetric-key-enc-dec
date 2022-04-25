@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Enter the name of file to create a new file: "
 read new_file
 touch $new_file
