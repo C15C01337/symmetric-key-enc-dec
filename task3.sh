@@ -16,7 +16,7 @@ function encryption(){
     echo "Enter the filename that will be used to save as output:"
     read outFile
 
-openssl enc -$encAlg -k $passEnc -p -in $toencFile -out $outFile
+openssl enc -$encAlg -k $passEnc -in $toencFile -out $outFile
 
 choices
 }
@@ -31,7 +31,7 @@ function decryption(){
     echo "Enter the filename that will be used to save as output:"
     read outDec
 
-openssl enc -$decAlg -k $passDec -d -in $todecFile -out $outDec -P
+openssl $decAlg -d -k $passDec -in $todecFile -out $outDec
 
 choices
 }
